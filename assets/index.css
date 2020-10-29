@@ -1,0 +1,306 @@
+body html {
+    height: 100vh;
+}
+
+#app {
+    height: 100vh;
+    overflow-y: scroll;
+}
+
+
+/* 头部logo、搜索栏、用户头像、download */
+
+.header {
+    height: 5vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 0 5vw;
+    padding-top: 1.5vh;
+    padding-bottom: 2vh;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    /* background-color: red; */
+    z-index: 999999;
+}
+
+.header .search-input {
+    width: 134px;
+    height: 24px;
+    font-size: 10px;
+    margin-left: 3px;
+    display: flex;
+    align-items: center;
+    background-color: #f4f4f4;
+    color: #999;
+    border-radius: 12px;
+}
+
+.header .search-input svg {
+    margin-left: 2vw;
+}
+
+.header .search-input span {
+    width: 100px;
+    margin-left: 1vw;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.header .avatar svg {
+    border-radius: 50%;
+}
+
+.header .download-app {
+    width: 74px;
+    height: 23px;
+    font-size: 14px;
+    line-height: 23px;
+    text-align: center;
+    background-color: #fb7299;
+    color: #fff;
+    border-radius: 4px;
+}
+
+
+/* 头部导航栏 */
+
+.nav-box {
+    height: 5vh;
+    position: fixed;
+    top: 8.5vh;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    z-index: 9999;
+}
+
+.nav-box .nav-list {
+    width: 90vw;
+    white-space: nowrap;
+    overflow-x: scroll;
+    /* background-color: aqua; */
+}
+
+.nav-box .nav-list::-webkit-scrollbar {
+    display: none;
+}
+
+.nav-box .nav-list .nav {
+    display: inline-block;
+    margin: 3px 5vw;
+    line-height: 4vh;
+    font-size: 14px;
+    color: #747474;
+    border-bottom: 2px solid transparent;
+}
+
+.hide-nav-box .nav.active,
+.nav-box .nav.active {
+    border-color: #fb7299;
+    color: #fb7299;
+}
+
+.nav-box .down {
+    width: 9vw;
+    height: 5vh;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding-left: 1vw;
+}
+
+.hide-nav-box {
+    position: fixed;
+    top: 8.5vh;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    transition: transform .4s;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, .4);
+    z-index: 99999;
+}
+
+.hide-nav-box.hide {
+    /* display: none; */
+    /* top: -145px; */
+    transform: translateY(-260px);
+}
+
+.hide-nav-box .nav {
+    width: 32px;
+    display: inline-block;
+    margin: 1vh 4vw;
+    padding: 1vh 0;
+    font-size: 14px;
+    text-align: center;
+    color: #747474;
+    border-bottom: 2px solid transparent;
+}
+
+.hide-nav-box .nav.big {
+    width: 50px;
+    margin: 1vh 1.5vw;
+}
+
+.hide-nav-box .up {
+    border-top: 1px solid #ccc;
+    text-align: center;
+}
+
+
+/* 轮播区域 */
+
+.banner-box {
+    width: 95vw;
+    height: 16vh;
+    position: relative;
+    top: 14vh;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 6px;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.banner-box .banner-list {
+    width: calc(95vw * 4);
+    display: flex;
+    position: absolute;
+    /* left: 0; */
+}
+
+.banner-box img {
+    width: 95vw;
+    height: 16vh;
+}
+
+.banner-box .spot-list {
+    height: 2vh;
+    padding: 0 1vw;
+    background-color: rgba(0, 0, 0, .4);
+    display: flex;
+    align-items: center;
+    border-radius: 1vh;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 1vh;
+}
+
+.banner-box .spot {
+    width: 1.5vw;
+    height: 1.5vw;
+    background-color: #fff;
+    border-radius: 50%;
+    margin: 0 .5vw;
+}
+
+.banner-box .spot.active {
+    background-color: #fb7299;
+}
+
+
+/* 视频列表区域 */
+
+.video-box {
+    width: 95vw;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-top: 16vh;
+    background-color: #fff;
+}
+
+.video-box .video-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.video-box .video-list::after {
+    content: '';
+    overflow: hidden;
+    clear: both;
+}
+
+.video-box .video {
+    width: 170px;
+    height: 160px;
+    float: left;
+    overflow: hidden;
+}
+
+.video-box .poster {
+    height: 106px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 6px;
+}
+
+.video-box .video img {
+    width: 100%;
+    height: 100%;
+}
+
+.video-box .info {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 5px 10px;
+    color: #fff;
+    display: flex;
+    background-image: linear-gradient(rgba(33, 33, 33, 0), rgba(33, 33, 33, .5));
+    font-size: 12px;
+}
+
+.video-box .play,
+.video-box .rank {
+    display: flex;
+    align-items: center;
+    flex: 1 1 auto;
+}
+
+.video-box .info svg {
+    fill: #fff;
+}
+
+.video-box .video .title {
+    font-size: 14px;
+    margin: 3px 5px;
+    line-height: 20px;
+    overflow: hidden;
+    /* 单行文本打点
+    设置文本不换行
+    white-space: nowrap;
+    设置文字溢出打点
+    text-overflow: ellipsis; */
+    /* 设置盒子为伸缩盒 */
+    display: -webkit-box;
+    /* 设置伸缩盒内子元素的排列方式为vertical */
+    -webkit-box-orient: vertical;
+    /* 限制一个块元素内显示的文本行数 */
+    -webkit-line-clamp: 2;
+}
+
+
+/* 底部区域 */
+
+.footer {
+    margin-top: 7vh;
+}
+
+.footer p {
+    text-align: center;
+    font-size: 12px;
+    margin-bottom: 2vh;
+    color: #999;
+}
